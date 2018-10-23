@@ -29,7 +29,7 @@ define([
         stack = instantiator();
       }
     });
-
+//====================================
     describe('stack shared behavior', function() {
 
       verifyClass(instantiator).followsPattern(variant, {}, prototypeOfInstances);
@@ -52,6 +52,7 @@ define([
         stack.push('a');
         stack.push('b');
         stack.pop();
+
         expect(stack.size()).to.equal(1);
       });
 
@@ -70,7 +71,7 @@ define([
       });
 
     });
-
+//======
     describe('stack-specific behavior', function() {
       it('removes the most recently added of two items', function() {
         stack.push('a');
@@ -88,7 +89,7 @@ define([
     });
 
   });
-
+//=============================
   describe('queue', function() {
     var queue;
     var instantiator = variant === 'pseudoclassical' ? Queue : Queue;
@@ -123,6 +124,7 @@ define([
       it('reports a size of 1 after adding two items and removing one', function() {
         queue.enqueue('a');
         queue.enqueue('b');
+        console.log(queue.storage)
         queue.dequeue();
         expect(queue.size()).to.equal(1);
       });
